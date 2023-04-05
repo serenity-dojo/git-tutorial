@@ -40,7 +40,7 @@ class WhenSearchingForTerms {
     void searchBySingleKeyword() {
         navigate.toTheHomePage();
         search.searchBy("Mount Taranaki");
-        Serenity.reportThat("The first heading should be 'Mount Taranaki'",
+        Serenity.reportThat("The first heading should be called 'Mount Taranaki'",
                 () -> assertThat(displayedArticle.getFirstHeading()).isEqualTo("Mount Taranaki")
         );
     }
