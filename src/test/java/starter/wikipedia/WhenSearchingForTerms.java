@@ -44,4 +44,14 @@ class WhenSearchingForTerms {
                 () -> assertThat(displayedArticle.getFirstHeading()).isEqualTo("Mount Taranaki")
         );
     }
+
+    @Test
+    void searchByAnotherSingleKeyword() {
+        navigate.toTheHomePage();
+        search.searchBy("Mount Fuji");
+        Serenity.reportThat("The first heading should be 'Mount Fuji'",
+                () -> assertThat(displayedArticle.getFirstHeading()).isEqualTo("Mount Fuji")
+        );
+    }
+
 }
