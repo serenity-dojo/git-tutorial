@@ -37,11 +37,38 @@ class WhenSearchingForTerms {
     DisplayedArticle displayedArticle;
 
     @Test
-    void searchBySingleKeyword() {
+    void searchBySingleWelshKeyword() {
         navigate.toTheHomePage();
         search.searchBy("Mount Snowdon");
         Serenity.reportThat("The first heading should be called 'Mount Snowdon'",
                 () -> assertThat(displayedArticle.getFirstHeading()).isEqualTo("Mount Snowdon")
+        );
+    }
+
+    @Test
+    void searchBySingleKeyword() {
+        navigate.toTheHomePage();
+        search.searchBy("Mount Kosiosko");
+        Serenity.reportThat("The first heading should be 'Mount Kosiosko'",
+                () -> assertThat(displayedArticle.getFirstHeading()).isEqualTo("Mount Kosiosko")
+        );
+    }
+
+    @Test
+    void searchByAnotherSingleKeyword() {
+        navigate.toTheHomePage();
+        search.searchBy("Mount Fuji");
+        Serenity.reportThat("The first heading should be 'Mount Fuji'",
+                () -> assertThat(displayedArticle.getFirstHeading()).isEqualTo("Mount Fuji")
+        );
+    }
+
+    @Test
+    void searchByYetAnotherSingleKeyword() {
+        navigate.toTheHomePage();
+        search.searchBy("Mount Taranaki");
+        Serenity.reportThat("The first heading should be 'Mount Taranaki'",
+                () -> assertThat(displayedArticle.getFirstHeading()).isEqualTo("Mount Taranaki")
         );
     }
 }
