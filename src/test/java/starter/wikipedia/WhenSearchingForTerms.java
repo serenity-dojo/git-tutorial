@@ -39,9 +39,9 @@ class WhenSearchingForTerms {
     @Test
     void searchBySingleKeyword() {
         navigate.toTheHomePage();
-        search.searchBy("Everest");
-        Serenity.reportThat("The first heading should be 'Mount Everest'",
-                () -> assertThat(displayedArticle.getFirstHeading()).isEqualTo("Mount Everest")
+        search.searchBy("Mount Taranaki");
+        Serenity.reportThat("The first heading should be 'Mount Taranaki'",
+                () -> assertThat(displayedArticle.getFirstHeading()).isEqualTo("Mount Taranaki")
         );
     }
 }
