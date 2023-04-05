@@ -39,9 +39,9 @@ class WhenSearchingForTerms {
     @Test
     void searchBySingleKeyword() {
         navigate.toTheHomePage();
-        search.searchBy("Mount Taranaki");
-        Serenity.reportThat("The first heading should be 'Mount Taranaki'",
-                () -> assertThat(displayedArticle.getFirstHeading()).isEqualTo("Mount Taranaki")
+        search.searchBy("Mount Kosiosko");
+        Serenity.reportThat("The first heading should be 'Mount Kosiosko'",
+                () -> assertThat(displayedArticle.getFirstHeading()).isEqualTo("Mount Kosiosko")
         );
     }
 
@@ -54,4 +54,12 @@ class WhenSearchingForTerms {
         );
     }
 
+    @Test
+    void searchByYetAnotherSingleKeyword() {
+        navigate.toTheHomePage();
+        search.searchBy("Mount Taranaki");
+        Serenity.reportThat("The first heading should be 'Mount Taranaki'",
+                () -> assertThat(displayedArticle.getFirstHeading()).isEqualTo("Mount Taranaki")
+        );
+    }
 }
