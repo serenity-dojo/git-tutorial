@@ -37,6 +37,15 @@ class WhenSearchingForTerms {
     DisplayedArticle displayedArticle;
 
     @Test
+    void searchBySingleWelshKeyword() {
+        navigate.toTheHomePage();
+        search.searchBy("Mount Snowdon");
+        Serenity.reportThat("The first heading should be called 'Mount Snowdon'",
+                () -> assertThat(displayedArticle.getFirstHeading()).isEqualTo("Mount Snowdon")
+        );
+    }
+
+    @Test
     void searchBySingleKeyword() {
         navigate.toTheHomePage();
         search.searchBy("Mount Kosiosko");
